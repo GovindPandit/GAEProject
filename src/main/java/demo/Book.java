@@ -2,6 +2,7 @@ package demo;
 
 import java.io.Serializable;
 
+//
 public class Book implements Serializable
 {
 	private int bookid;
