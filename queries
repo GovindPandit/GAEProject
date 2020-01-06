@@ -1,0 +1,16 @@
+alter table books
+add bookid int 
+
+update books
+set bookid=1
+where bookname='Harry Potter';
+
+update books
+set bookid=2
+where bookname='Harry Potter 2';
+
+alter table books
+add constraint pk_books_bookid primary key(bookid)
+
+alter table books
+modify bookid int auto_increment
