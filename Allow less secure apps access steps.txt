@@ -1,0 +1,9 @@
+Allow less secure apps
+
+1)Sign in your gmail account
+2)Click on google apps from right upper corner
+3)Click on account
+4)Security
+5)Scroll down and turn on less secure app access.
+
+NOTE: If you have any two way security then this option is bydefault disabled.

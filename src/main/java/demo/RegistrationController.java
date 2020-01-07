@@ -31,6 +31,9 @@ public class RegistrationController extends HttpServlet
 			ps.setString(2, u.getEmail());
 			ps.setString(3, u.getPassword());
 			ps.executeUpdate();
+			
+			Test t=new Test(u.getEmail(), "Registered Successfully!!!", "Welcome to Library App!!!!");
+			t.sendEmail();
 			resp.sendRedirect("login.jsp");
 			
 			PrintWriter out=resp.getWriter();

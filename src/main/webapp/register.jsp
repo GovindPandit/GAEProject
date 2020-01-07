@@ -5,12 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style>
-	.myform
-	{
-		margin:0 auto;
-	}
-</style>
+<link href="formcss.css" rel="stylesheet"/>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
