@@ -1,0 +1,11 @@
+update books set status='A' where bookid=4
+
+alter table users
+add role varchar(40)
+
+update users
+set role='user'
+
+update users
+set role='admin'
+where username='Govind123'

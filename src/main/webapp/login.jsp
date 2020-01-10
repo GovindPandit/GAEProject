@@ -8,6 +8,11 @@
 <link href="formcss.css" rel="stylesheet"/>
 </head>
 <body>
+	<!-- scriplet tag -->
+	<%
+		HttpSession hs=request.getSession();
+		hs.removeAttribute("u");
+	%>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<form class="col-lg-6 col-md-6 col-sm-12 col-xs-12 myform" action="LoginController" method="post">

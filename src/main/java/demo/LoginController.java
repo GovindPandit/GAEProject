@@ -37,6 +37,8 @@ public class LoginController extends HttpServlet
 			
 			if(rs.next())
 			{
+				u.setRole(rs.getString("role"));
+				u.setEmail(rs.getString("email"));
 				hs.setAttribute("u", u);
 				out.println("<script>"
 						+ "alert('Welcome "+u.getUsername()+"');"

@@ -14,10 +14,11 @@
 </style>
 </head>
 <body>
+	
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<c:if test="${book==null}">
-		<form class="col-lg-6 col-md-6 col-sm-12 col-xs-12 myform" action="AddBookController" method="post">
+		<form class="col-lg-6 col-md-6 col-sm-12 col-xs-12 myform" action="AddBookController" method="post" enctype="multipart/form-data">
 		</c:if>
 		
 		<c:if test="${book!=null}">
@@ -42,6 +43,10 @@
 			<div class="form-group">
 				<label>Enter Price</label>
 				<input type="text" name="price" placeholder="Enter Price" class="form-control" value="${book.price}"/>
+			</div>
+			<div class="form-group">
+				<label>Enter Price</label>
+				<input type="file"  accept="image/*" name="image" placeholder="Select Image" class="form-control"/>
 			</div>
 			<div class="form-group">
 				<c:if test="${book==null}">

@@ -23,6 +23,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     
+      <li class="nav-item">
+        <a class="nav-link" href="books.jsp">Books</a>
+      </li>
+      
       <c:if test="${u==null}">
       <li class="nav-item active">
         <a class="nav-link" href="home.jsp">Home <span class="sr-only">(current)</span></a>
@@ -34,17 +38,18 @@
         <a class="nav-link" href="register.jsp">Register</a>
       </li>
       </c:if>
+      
       <c:if test="${u!=null}">
-      	<li class="nav-item">
-        	<a class="nav-link" href="addbook.jsp">Add Book</a>
-      	</li>
+      	<c:if test="${u.role=='admin'}">
+      		<li class="nav-item">
+        		<a class="nav-link" href="addbook.jsp">Add Book</a>
+      		</li>
+      	</c:if>
       	<li class="nav-item">
         	<a class="nav-link" href="login.jsp">Logout</a>
       	</li>
       </c:if>
-      <li class="nav-item">
-        <a class="nav-link" href="books.jsp">Books</a>
-      </li>
+      
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

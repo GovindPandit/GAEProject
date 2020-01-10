@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link href="displaybooks.css" rel="stylesheet"/>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -18,25 +19,34 @@
 	</sql:query>
 	
 	
-	<table class="table table-striped">
-		<tr>
-			<th>Book Id</th>
-			<th>Book Name</th>
-			<th>Author</th>
-			<th>Price</th>
-			<th>Edit | Delete</th>
-		</tr>
-		<c:forEach items="${rs.rows}" var="row">
-			<tr>
-				<td>${row.bookid}</td>
-				<td>${row.bookname}</td>
-				<td>${row.author}</td>
-				<td>${row.price}</td>
-				<th><a href="EditController?bookid=${row.bookid}" class="btn btn-primary">Edit</a> | <a href="DeleteController?bookid=${row.bookid}" class="btn btn-danger">Delete</a></th>
-			</tr>
-		</c:forEach>
-	</table>
-	
+	<div class="container">
+	<div class="row">
+	<c:forEach items="${rs.rows}" var="row">
+        <div class="col-xs-12 col-sm-4">
+            <div class="card">
+                <a class="img-card" href="book.jsp?bookid=${row.bookid}">
+                    <img src="ImageServlet?bookid=${row.bookid}"/>
+                </a>
+                <br />
+                <div class="card-content">
+                    <h4 class="card-title">
+                        <a href="http://www.fostrap.com/">
+                            ${row.bookname}
+                        </a>
+                    </h4>
+                    <div class="">
+                        ${row.author}
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-primary btn-block" href="OrderController">Buy</a>
+                    <a class="btn btn-secondary btn-block" href="http://www.fostrap.com/">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+	</c:forEach>
+	</div>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
