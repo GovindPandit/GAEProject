@@ -25,7 +25,11 @@
         <div class="col-xs-12 col-sm-4">
             <div class="card">
                 <a class="img-card" href="book.jsp?bookid=${row.bookid}">
-                    <img src="ImageServlet?bookid=${row.bookid}"/>
+                	<!-- Display image from database -->
+                    <!--<img src="ImageServlet?bookid=${row.bookid}"/>-->
+                    
+                    <!-- Display image from database link-->
+                    <img src="${row.imagelink}"/>
                 </a>
                 <br />
                 <div class="card-content">
